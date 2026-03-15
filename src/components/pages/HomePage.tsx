@@ -47,9 +47,9 @@ export default function HomePage() {
   };
 
   const formatDate = (date: Date | string | undefined) => {
-    if (!date) return 'Date not available';
+    if (!date) return 'التاريخ غير متاح';
     const d = new Date(date);
-    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    return d.toLocaleDateString('ar-SA', { year: 'numeric', month: 'long', day: 'numeric' });
   };
   // --- END DATA FIDELITY PROTOCOL ---
 
@@ -81,7 +81,7 @@ export default function HomePage() {
   };
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-background text-secondary selection:bg-accent-green selection:text-primary-foreground overflow-clip font-paragraph">
+    <div ref={containerRef} className="min-h-screen bg-background text-secondary selection:bg-accent-green selection:text-primary-foreground overflow-clip font-paragraph" dir="rtl">
       <style>{`
         .noise-overlay {
           position: fixed;
@@ -126,10 +126,10 @@ export default function HomePage() {
           className="absolute inset-0 flex flex-col justify-center items-center pointer-events-none z-0 overflow-hidden"
         >
           <h1 className="font-heading text-[15vw] leading-[0.8] text-stroke opacity-20 whitespace-nowrap transform -rotate-2 scale-110">
-            COLLECTIVE
+            العمل
           </h1>
           <h1 className="font-heading text-[15vw] leading-[0.8] text-stroke-accent opacity-20 whitespace-nowrap transform -rotate-2 scale-110 ml-32">
-            ACTION
+            الجماعي
           </h1>
         </motion.div>
 
@@ -144,15 +144,15 @@ export default function HomePage() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="inline-block bg-accent-green text-primary-foreground px-4 py-2 font-bold text-sm tracking-widest mb-8 transform -skew-x-12">
-                  PROJECT: THE GROVE
+                  المشروع: البستان
                 </div>
                 <h2 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] leading-[0.9] text-secondary mb-8 uppercase">
-                  Every Tree <br/>
-                  <span className="text-accent-green">Tells A</span> <br/>
-                  Story.
+                  كل شجرة <br/>
+                  <span className="text-accent-green">تحكي</span> <br/>
+                  قصة.
                 </h2>
-                <p className="font-paragraph text-lg md:text-xl text-secondary/80 max-w-2xl mb-12 leading-relaxed border-l-4 border-accent-green pl-6">
-                  This is not just a gallery. This is a living testament to collective action. Each palm tree you see here represents a donor who chose to make a tangible impact. Your contribution doesn't disappear—it grows, it breathes, it stands tall.
+                <p className="font-paragraph text-lg md:text-xl text-secondary/80 max-w-2xl mb-12 leading-relaxed border-r-4 border-accent-green pr-6">
+                  هذا ليس مجرد معرض. هذا شهادة حية على العمل الجماعي. كل نخلة تراها هنا تمثل متبرعاً اختار إحداث تأثير ملموس. مساهمتك لا تختفي - فهي تنمو وتتنفس وتقف شامخة.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-6">
@@ -160,16 +160,16 @@ export default function HomePage() {
                     href="#gallery" 
                     className="group relative inline-flex items-center justify-center bg-accent-green text-primary-foreground font-heading text-xl font-bold px-10 py-5 overflow-hidden transition-transform hover:scale-105"
                   >
-                    <span className="absolute inset-0 w-full h-full bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                    <span className="absolute inset-0 w-full h-full bg-secondary transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
                     <span className="relative flex items-center gap-3 group-hover:text-secondary-foreground transition-colors duration-300">
-                      EXPLORE THE GROVE <ArrowRight className="w-6 h-6" />
+                      استكشف البستان <ArrowRight className="w-6 h-6" />
                     </span>
                   </a>
                   <a 
                     href="#search" 
                     className="group inline-flex items-center justify-center bg-transparent text-secondary font-heading text-xl font-bold px-10 py-5 border-2 border-secondary hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
                   >
-                    FIND YOUR IMPACT
+                    ابحث عن تأثيرك
                   </a>
                 </div>
               </motion.div>
@@ -196,12 +196,12 @@ export default function HomePage() {
                   {/* Overlay Stats */}
                   <div className="absolute bottom-0 left-0 w-full bg-background/90 backdrop-blur-sm border-t border-accent-green/30 p-6 flex justify-between items-end">
                     <div>
-                      <div className="text-accent-green text-xs font-bold tracking-widest mb-1">LIVE COUNT</div>
+                      <div className="text-accent-green text-xs font-bold tracking-widest mb-1">العدد الحي</div>
                       <div className="font-heading text-5xl text-secondary">{trees.length}</div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-secondary/60 text-xs font-bold tracking-widest mb-1">STATUS</div>
-                      <div className="font-paragraph text-lg text-secondary">GROWING</div>
+                    <div className="text-left">
+                      <div className="text-secondary/60 text-xs font-bold tracking-widest mb-1">الحالة</div>
+                      <div className="font-paragraph text-lg text-secondary">ينمو</div>
                     </div>
                   </div>
                 </div>
@@ -228,7 +228,7 @@ export default function HomePage() {
                 {trees.length}
               </div>
               <div className="font-paragraph text-xl font-bold uppercase tracking-widest">
-                Trees Planted
+                أشجار مزروعة
               </div>
             </motion.div>
 
@@ -244,7 +244,7 @@ export default function HomePage() {
                 {new Set(trees.map(t => t.donorName)).size}
               </div>
               <div className="font-paragraph text-xl font-bold uppercase tracking-widest">
-                Unique Donors
+                متبرعون فريدون
               </div>
             </motion.div>
 
@@ -260,7 +260,7 @@ export default function HomePage() {
                 100<span className="text-5xl">%</span>
               </div>
               <div className="font-paragraph text-xl font-bold uppercase tracking-widest">
-                Transparency
+                الشفافية
               </div>
             </motion.div>
 
@@ -283,11 +283,11 @@ export default function HomePage() {
           >
             <div className="flex items-center gap-4 mb-8">
               <div className="w-3 h-3 bg-accent-green rounded-full animate-pulse" />
-              <span className="font-paragraph text-sm font-bold tracking-widest uppercase">System Query</span>
+              <span className="font-paragraph text-sm font-bold tracking-widest uppercase">استعلام النظام</span>
             </div>
             
             <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl mb-12 uppercase leading-none">
-              Locate <br/>Your Impact.
+              حدد <br/>تأثيرك.
             </h2>
             
             <div className="relative group">
@@ -298,7 +298,7 @@ export default function HomePage() {
                 </div>
                 <input
                   type="text"
-                  placeholder="ENTER DONOR NAME OR ID_"
+                  placeholder="أدخل اسم المتبرع أو المعرف_"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full bg-transparent text-secondary font-paragraph text-2xl md:text-4xl px-6 py-6 focus:outline-none placeholder:text-secondary/30 uppercase"
@@ -312,10 +312,10 @@ export default function HomePage() {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="mt-8 bg-secondary-foreground text-secondary p-6 border-l-8 border-accent-green"
+                  className="mt-8 bg-secondary-foreground text-secondary p-6 border-r-8 border-accent-green"
                 >
                   <p className="font-paragraph text-xl">
-                    <span className="text-accent-green">{'>'}</span> FOUND {filteredTrees.length} MATCHING RECORD{filteredTrees.length !== 1 ? 'S' : ''}
+                    <span className="text-accent-green">{'<'}</span> وجدت {filteredTrees.length} سجل مطابق
                   </p>
                 </motion.div>
               )}
@@ -335,8 +335,8 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <h2 className="font-heading text-6xl md:text-8xl text-secondary uppercase leading-none">
-                The Living <br/>
-                <span className="text-accent-green">Gallery</span>
+                المعرض <br/>
+                <span className="text-accent-green">الحي</span>
               </h2>
             </motion.div>
             <motion.div
@@ -345,8 +345,8 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="max-w-md"
             >
-              <p className="font-paragraph text-lg text-secondary/70 text-right">
-                A structural representation of generosity. Each block is a life planted, a story rooted in the earth.
+              <p className="font-paragraph text-lg text-secondary/70 text-left">
+                تمثيل هيكلي للكرم. كل كتلة هي حياة مزروعة، قصة متجذرة في الأرض.
               </p>
             </motion.div>
           </div>
@@ -357,7 +357,7 @@ export default function HomePage() {
               <div className="w-full h-[50vh] flex items-center justify-center">
                 <div className="flex flex-col items-center gap-4">
                   <div className="w-16 h-16 border-4 border-secondary border-t-accent-green rounded-full animate-spin" />
-                  <div className="font-paragraph text-accent-green tracking-widest uppercase">Loading Grove Data...</div>
+                  <div className="font-paragraph text-accent-green tracking-widest uppercase">جاري تحميل بيانات البستان...</div>
                 </div>
               </div>
             ) : filteredTrees.length > 0 ? (
@@ -390,7 +390,7 @@ export default function HomePage() {
                         {/* Top Bar */}
                         <div className="flex justify-between items-start">
                           <div className="bg-background/80 backdrop-blur-md px-3 py-1 border border-secondary/20 font-paragraph text-xs text-accent-green tracking-widest">
-                            ID: {tree.donationId || 'UNKNOWN'}
+                            المعرف: {tree.donationId || 'غير معروف'}
                           </div>
                           <div className="w-10 h-10 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-accent-green group-hover:border-accent-green group-hover:text-primary-foreground transition-all duration-300">
                             <ArrowRight className="w-5 h-5 transform -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
@@ -400,7 +400,7 @@ export default function HomePage() {
                         {/* Bottom Info */}
                         <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                           <div className="font-paragraph text-sm text-secondary/60 mb-2 flex items-center gap-2 uppercase tracking-wider">
-                            <User className="w-4 h-4" /> Donor
+                            <User className="w-4 h-4" /> المتبرع
                           </div>
                           <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl text-secondary mb-4 leading-none group-hover:text-accent-green transition-colors duration-300">
                             {tree.donorName || 'Anonymous'}
@@ -409,7 +409,7 @@ export default function HomePage() {
                           <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                             <div className="flex items-center gap-2 font-paragraph text-sm text-secondary/80">
                               <Calendar className="w-4 h-4 text-accent-green" />
-                              {tree.plantingDate ? new Date(tree.plantingDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : 'Date N/A'}
+                              {tree.plantingDate ? new Date(tree.plantingDate).toLocaleDateString('ar-SA', { month: 'short', year: 'numeric' }) : 'التاريخ غير متاح'}
                             </div>
                           </div>
                         </div>
@@ -425,16 +425,16 @@ export default function HomePage() {
               <div className="w-full py-32 flex flex-col items-center justify-center text-center border-4 border-dashed border-secondary/20">
                 <Leaf className="w-24 h-24 text-secondary/20 mb-8" />
                 <h3 className="font-heading text-5xl text-secondary mb-4 uppercase">
-                  No Records Found
+                  لم يتم العثور على سجلات
                 </h3>
                 <p className="font-paragraph text-xl text-secondary/60 max-w-md">
-                  The query returned zero results. Adjust your search parameters to explore the grove.
+                  لم تعيد الاستعلام أي نتائج. اضبط معاملات البحث الخاصة بك لاستكشاف البستان.
                 </p>
                 <button 
                   onClick={() => setSearchQuery('')}
                   className="mt-8 bg-secondary text-secondary-foreground px-8 py-4 font-bold uppercase tracking-widest hover:bg-accent-green transition-colors"
                 >
-                  Clear Search
+                  مسح البحث
                 </button>
               </div>
             )}
@@ -453,13 +453,13 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-heading text-6xl md:text-8xl lg:text-9xl text-primary-foreground uppercase leading-none mb-8">
-              Plant Your <br/> Legacy.
+              ازرع <br/> إرثك.
             </h2>
             <p className="font-paragraph text-2xl text-primary-foreground/80 max-w-2xl mx-auto mb-12">
-              Join the movement. Add your name to the grove and make a tangible impact on the planet today.
+              انضم إلى الحركة. أضف اسمك إلى البستان وأحدث تأثيراً ملموساً على الكوكب اليوم.
             </p>
             <button className="bg-background text-secondary font-heading text-2xl px-16 py-8 uppercase hover:bg-secondary hover:text-secondary-foreground transition-colors duration-300 border-4 border-background hover:border-secondary">
-              Donate Now
+              تبرع الآن
             </button>
           </motion.div>
         </div>

@@ -6,36 +6,36 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="md:col-span-5">
             <h3 className="font-heading text-4xl md:text-5xl text-accent-green mb-6">
-              THE GROVE
+              البستان
             </h3>
             <p className="font-paragraph text-base text-secondary leading-relaxed max-w-md">
-              A bold statement of collective action. Every palm tree planted is a testament to the power of individual contributions creating lasting environmental impact.
+              بيان جريء للعمل الجماعي. كل نخلة مزروعة هي شهادة على قوة المساهمات الفردية التي تخلق تأثيراً بيئياً دائماً.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="md:col-span-3">
             <h4 className="font-heading text-2xl text-secondary mb-6">
-              NAVIGATE
+              التنقل
             </h4>
             <nav className="flex flex-col gap-4">
               <a 
                 href="#gallery" 
                 className="font-paragraph text-base text-secondary hover:text-accent-green transition-colors duration-300"
               >
-                Gallery
+                المعرض
               </a>
               <a 
                 href="#search" 
                 className="font-paragraph text-base text-secondary hover:text-accent-green transition-colors duration-300"
               >
-                Search Trees
+                البحث عن الأشجار
               </a>
               <a 
                 href="#donate" 
                 className="font-paragraph text-base text-secondary hover:text-accent-green transition-colors duration-300"
               >
-                Donate
+                تبرع
               </a>
             </nav>
           </div>
@@ -43,12 +43,12 @@ export default function Footer() {
           {/* Contact Column */}
           <div className="md:col-span-4">
             <h4 className="font-heading text-2xl text-secondary mb-6">
-              CONNECT
+              تواصل
             </h4>
             <div className="space-y-4">
               <div>
                 <p className="font-paragraph text-xs text-secondary opacity-60 mb-1">
-                  EMAIL
+                  البريد الإلكتروني
                 </p>
                 <a 
                   href="mailto:info@thegrove.org" 
@@ -59,7 +59,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="font-paragraph text-xs text-secondary opacity-60 mb-1">
-                  PHONE
+                  الهاتف
                 </p>
                 <a 
                   href="tel:+1234567890" 
@@ -76,20 +76,20 @@ export default function Footer() {
         <div className="pt-8 border-t border-secondary border-opacity-20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-paragraph text-sm text-secondary opacity-60">
-              © 2026 The Grove. All rights reserved.
+              © 2026 البستان. جميع الحقوق محفوظة.
             </p>
             <div className="flex gap-8">
               <a 
                 href="#privacy" 
                 className="font-paragraph text-sm text-secondary opacity-60 hover:text-accent-green hover:opacity-100 transition-all duration-300"
               >
-                Privacy Policy
+                سياسة الخصوصية
               </a>
               <a 
                 href="#terms" 
                 className="font-paragraph text-sm text-secondary opacity-60 hover:text-accent-green hover:opacity-100 transition-all duration-300"
               >
-                Terms of Service
+                شروط الخدمة
               </a>
             </div>
           </div>

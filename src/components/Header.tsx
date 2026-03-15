@@ -11,7 +11,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="font-heading text-3xl md:text-4xl text-accent-green hover:text-secondary transition-colors duration-300">
-            THE GROVE
+            البستان
           </a>
 
           {/* Desktop Navigation */}
@@ -20,25 +20,25 @@ export default function Header() {
               href="#gallery" 
               className="font-paragraph text-base text-secondary hover:text-accent-green transition-colors duration-300"
             >
-              GALLERY
+              المعرض
             </a>
             <a 
               href="#search" 
               className="font-paragraph text-base text-secondary hover:text-accent-green transition-colors duration-300"
             >
-              SEARCH
+              البحث
             </a>
             <a 
               href="#contact" 
               className="font-paragraph text-base text-secondary hover:text-accent-green transition-colors duration-300"
             >
-              CONTACT
+              التواصل
             </a>
             <a 
               href="#donate" 
               className="bg-accent-green text-primary-foreground font-paragraph text-base font-bold px-8 py-3 hover:bg-secondary hover:text-secondary-foreground transition-colors duration-300"
             >
-              DONATE NOW
+              تبرع الآن
             </a>
           </nav>
 
@@ -68,28 +68,28 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className="font-paragraph text-lg text-secondary hover:text-accent-green transition-colors duration-300"
                 >
-                  GALLERY
+                  المعرض
                 </a>
                 <a 
                   href="#search" 
                   onClick={() => setIsMenuOpen(false)}
                   className="font-paragraph text-lg text-secondary hover:text-accent-green transition-colors duration-300"
                 >
-                  SEARCH
+                  البحث
                 </a>
                 <a 
                   href="#contact" 
                   onClick={() => setIsMenuOpen(false)}
                   className="font-paragraph text-lg text-secondary hover:text-accent-green transition-colors duration-300"
                 >
-                  CONTACT
+                  التواصل
                 </a>
                 <a 
                   href="#donate" 
                   onClick={() => setIsMenuOpen(false)}
                   className="bg-accent-green text-primary-foreground font-paragraph text-base font-bold px-8 py-3 text-center hover:bg-secondary hover:text-secondary-foreground transition-colors duration-300"
                 >
-                  DONATE NOW
+                  تبرع الآن
                 </a>
               </div>
             </motion.nav>
